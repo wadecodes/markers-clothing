@@ -3,14 +3,16 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { auth } from '../../firebase/firebase.utils.js';
+import CartIcon from '../cart-icon/cart-icon.component';
+import CartDropDown from '../cart-dropdown/cart-dropdown.components';
 
 import { ReactComponent as Logo } from '../../assets/crown.svg';
 
 import './header.styles.scss';
 
-const Header = (props) => {
+const Header = ({ currentUser, cart }) => {
   const renderAuth = () => {
-    if (props.currentUser) {
+    if (currentUser) {
       return (
         <div className="option" onClick={() => auth.signOut()}>
           SIGN OUT
@@ -32,9 +34,7 @@ const Header = (props) => {
       <div className="options">
         <p className="option">
           Welcome{' '}
-          {props.currentUser
-            ? props.currentUser.displayName.toUpperCase()
-            : 'Guest'}
+          {currentUser ? currentUser.displayName.toUpperCase() : 'Guest'}
         </p>
         <Link className="option" to="shop">
           SHOP
@@ -43,13 +43,16 @@ const Header = (props) => {
           CONTACT
         </Link>
         {renderAuth()}
+        <CartIcon />
       </div>
+      {cart.isVisible ? <CartDropDown /> : null}
     </div>
   );
 };
 
-const mapStateToProps = (state) => ({
-  currentUser: state.user.currentUser,
+const mapStateToProps = ({ user, cart }) => ({
+  currentUser: user.currentUser,
+  cart: { isVisible: cart.isVisible },
 });
 
 export default connect(mapStateToProps)(Header);
