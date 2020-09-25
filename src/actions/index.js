@@ -1,4 +1,4 @@
-import { SET_CURRENT_USER, TOGGLE_CART } from './types';
+import { SET_CURRENT_USER, TOGGLE_CART, ADD_ITEM } from './types';
 
 export const setCurrentUser = (userAuth) => {
   return {
@@ -12,3 +12,10 @@ export const toggleCart = () => {
     type: TOGGLE_CART,
   };
 };
+
+export const addItem = (item) => {
+  return {
+    type: ADD_ITEM,
+    payload: item
+  }
+}
