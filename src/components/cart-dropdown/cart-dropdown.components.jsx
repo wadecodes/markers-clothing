@@ -2,7 +2,7 @@ import React from 'react';
 
 import { connect } from 'react-redux';
 
-import { selectCartItems } from '../../reducers/cart/cart.selector';
+import { selectCartItems } from '../../selectors/cart.selector';
 
 import CartItem from '../cart-item/cart-item.componenets';
 import CustomButton from '../custom-button/custom-button.component';
