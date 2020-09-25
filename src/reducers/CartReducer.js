@@ -1,5 +1,5 @@
 import { TOGGLE_CART, ADD_ITEM } from '../actions/types';
-import { addItemToCart } from './utils/cart.utils';
+import { addItemToCart } from './cart/cart.utils';
 
 const initialState = {
   isVisible: false,
