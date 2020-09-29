@@ -3,9 +3,7 @@ import './collection-overview.styles.scss';
 
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-import {
-  selectCollectionsForPreview,
-} from '../../selectors/shop.selector';
+import { selectCollectionsForPreview } from '../../selectors/shop.selector';
 import CollectionPreview from '../collection-preview/collection-preview.component';
 
 const CollectionsOverview = ({ collections }) => {
