@@ -13,13 +13,11 @@ Install Node modules for Development Mode
 
 ```
 npm install
-
 ```
 and start the development mode using
 
 ```
 npm start
-
 ```
 
 ### Build
@@ -28,7 +26,6 @@ Create the Build using
 
 ```
 npm run build
-
 ```
 
 ## Authors

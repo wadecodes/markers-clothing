@@ -5,19 +5,23 @@ import { selectCollection } from '../../selectors/shop.selector';
 
 import CollectionItem from '../../components/collection-item/collection-item.component';
 
-import './collection.styles.scss';
+import {
+  CollectionItemsContainer,
+  CollectionPageContainer,
+  CollectionTitle,
+} from './collection.styles.jsx';
 
 const Collection = ({ match: { params }, collection }) => {
   const { title, items } = collection;
   return (
-    <div className="collection-page">
-      <h2 className="title">{title.toUpperCase()}</h2>
-      <div className="items">
+    <CollectionPageContainer>
+      <CollectionTitle>{title.toUpperCase()}</CollectionTitle>
+      <CollectionItemsContainer>
         {items.map((item) => (
           <CollectionItem key={item.id} item={item} />
         ))}
-      </div>
-    </div>
+      </CollectionItemsContainer>
+    </CollectionPageContainer>
   );
 };
 

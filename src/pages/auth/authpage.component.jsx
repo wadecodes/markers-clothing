@@ -3,15 +3,15 @@ import React, { Component } from 'react';
 import SignIn from '../../components/sign-in/sign-in.component';
 import Signup from '../../components/sign-up/sign-up.components';
 
-import './authpage.styles.scss';
+import {AuthContainer} from './authpage.styles.jsx';
 
 export class AuthPage extends Component {
   render() {
     return (
-      <div className="auth">
+      <AuthContainer>
         <SignIn />
         <Signup />
-      </div>
+      </AuthContainer>
     );
   }
 }

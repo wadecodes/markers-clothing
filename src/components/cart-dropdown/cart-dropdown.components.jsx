@@ -9,29 +9,34 @@ import { toggleCart } from '../../actions';
 import CartItem from '../cart-item/cart-item.componenets';
 import CustomButton from '../custom-button/custom-button.component';
 
-import './cart-dropdown.styles.scss';
+import {
+  CartDropdownContainer,
+  CartItemsContainer,
+  EmptyMessage,
+} from './cart-dropdown.styles';
 
 const Cart = ({ cartItems, history, toggleCart }) => {
   return (
-    <div className="cart-dropdown">
-      <div className="cart-items">
+    <CartDropdownContainer>
+      <CartItemsContainer>
         {cartItems.length ? (
           cartItems.map((cartItem) => (
             <CartItem key={cartItem.id} item={cartItem} />
           ))
         ) : (
-          <span className="empty-message">Your cart is empty</span>
+          <EmptyMessage>Your cart is empty</EmptyMessage>
         )}
-      </div>
+      </CartItemsContainer>
       <CustomButton
+        style={{ marginTop: 'auto' }}
         onClick={() => {
           toggleCart();
           history.push('/checkout');
         }}
       >
-        GO TO CHECKOUT
+        GO TO CART
       </CustomButton>
-    </div>
+    </CartDropdownContainer>
   );
 };
 

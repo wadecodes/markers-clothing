@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
@@ -11,45 +10,42 @@ import { selectCurrentUser } from '../../selectors/user.selector';
 
 import { ReactComponent as Logo } from '../../assets/crown.svg';
 
-import './header.styles.scss';
+import {
+  HeaderContainer,
+  LogoContainer,
+  OptionLink,
+  OptionsContainer,
+} from './header.styles';
 
 const Header = ({ currentUser, cartVisibility }) => {
   const renderAuth = () => {
     if (currentUser) {
       return (
-        <div className="option" onClick={() => auth.signOut()}>
+        <OptionLink as="div" onClick={() => auth.signOut()}>
           SIGN OUT
-        </div>
+        </OptionLink>
       );
     } else {
-      return (
-        <Link className="option" to="auth">
-          SIGN IN
-        </Link>
-      );
+      return <OptionLink to="/auth">SIGN IN</OptionLink>;
     }
   };
   return (
-    <div className="header">
-      <Link className="logo-container" to="/">
-        <Logo className="logo" />
-      </Link>
-      <div className="options">
-        <p className="option">
+    <HeaderContainer>
+      <LogoContainer to="/">
+        <Logo />
+      </LogoContainer>
+      <OptionsContainer>
+        <OptionLink to="/">
           Welcome{' '}
           {currentUser ? currentUser.displayName.toUpperCase() : 'Guest'}
-        </p>
-        <Link className="option" to="shop">
-          SHOP
-        </Link>
-        <Link className="option" to="shop">
-          CONTACT
-        </Link>
+        </OptionLink>
+        <OptionLink to="shop">SHOP</OptionLink>
+        <OptionLink to="shop">CONTACT</OptionLink>
         {renderAuth()}
         <CartIcon />
-      </div>
+      </OptionsContainer>
       {cartVisibility ? <CartDropDown /> : null}
-    </div>
+    </HeaderContainer>
   );
 };
 
