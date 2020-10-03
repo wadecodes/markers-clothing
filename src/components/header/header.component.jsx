@@ -39,8 +39,8 @@ const Header = ({ currentUser, cartVisibility }) => {
           Welcome{' '}
           {currentUser ? currentUser.displayName.toUpperCase() : 'Guest'}
         </OptionLink>
-        <OptionLink to="shop">SHOP</OptionLink>
-        <OptionLink to="shop">CONTACT</OptionLink>
+        <OptionLink to="/shop">SHOP</OptionLink>
+        <OptionLink to="/shop">CONTACT</OptionLink>
         {renderAuth()}
         <CartIcon />
       </OptionsContainer>

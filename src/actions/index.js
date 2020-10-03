@@ -4,6 +4,7 @@ import {
   ADD_ITEM,
   CLEAR_ITEM_FROM_CART,
   REMOVE_ITEM,
+  UPDATE_COLLECTIONS,
 } from './types';
 
 export const setCurrentUser = (userAuth) => {
@@ -37,5 +38,12 @@ export const removeItem = (item) => {
   return {
     type: REMOVE_ITEM,
     payload: item,
+  };
+};
+
+export const updateCollections = (collections) => {
+  return {
+    type: UPDATE_COLLECTIONS,
+    payload: collections,
   };
 };
