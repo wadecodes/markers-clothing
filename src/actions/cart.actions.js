@@ -1,18 +1,11 @@
 import {
-  SET_CURRENT_USER,
-  TOGGLE_CART,
   ADD_ITEM,
   CLEAR_ITEM_FROM_CART,
   REMOVE_ITEM,
-  UPDATE_COLLECTIONS,
-} from './types';
+  TOGGLE_CART,CLEAR_CART
+} from './types/cart.types';
 
-export const setCurrentUser = (userAuth) => {
-  return {
-    type: SET_CURRENT_USER,
-    payload: userAuth,
-  };
-};
+//* CART ACTIONS
 
 export const toggleCart = () => {
   return {
@@ -41,9 +34,8 @@ export const removeItem = (item) => {
   };
 };
 
-export const updateCollections = (collections) => {
+export const clearCart = () => {
   return {
-    type: UPDATE_COLLECTIONS,
-    payload: collections,
-  };
-};
+    type: CLEAR_CART
+  }
+}
