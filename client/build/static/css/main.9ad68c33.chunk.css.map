@@ -1,0 +1,1 @@
+{"version":3,"sources":["App.css"],"names":[],"mappings":"AAAA,EACE,qBACF,CAEA,KACE,4CAA8C,CAC9C,iBACF,CAEA,EACE,oBAAqB,CACrB,UACF","file":"main.9ad68c33.chunk.css","sourcesContent":["* {\n  box-sizing: border-box;\n}\n\nbody {\n  font-family: 'Open Sans Condensed', sans-serif;\n  padding: 20px 60px;\n}\n\na {\n  text-decoration: none;\n  color: #000;\n}\n"]}
