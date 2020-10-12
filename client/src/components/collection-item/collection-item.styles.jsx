@@ -13,6 +13,14 @@ export const CollectionItemContainer = styled.div`
       opacity: 0.85;
     }
   }
+  @media screen and (max-width: 800px) {
+    width: 40vw;
+    &:hover {
+      button {
+        opacity: unset;
+      }
+    }
+  }
 `;
 
 export const AddToCartButton = styled(CustomButton)`
@@ -21,6 +29,11 @@ export const AddToCartButton = styled(CustomButton)`
   display: flex;
   position: absolute;
   top: 255px;
+  @media screen and (max-width: 800px) {
+    opacity: 0.9;
+    min-width: unset;
+    padding: 0 10px;
+  }
 `;
 
 export const ImageContainer = styled.div`
@@ -31,6 +44,11 @@ export const ImageContainer = styled.div`
   margin-bottom: 5px;
   &:hover {
     opacity: 0.8;
+  }
+  @media screen and (max-width: 800px) {
+    &:hover {
+      opacity: unset;
+    }
   }
 `;
 
